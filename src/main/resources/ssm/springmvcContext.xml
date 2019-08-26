@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.fh.*"/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes"  value="application/json;charset=UTF-8"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <property name="maxUploadSize" value="5000000000"/>
+    </bean>
+    <!-- Excel 处理 根据用户输入进行对象处理 -->
+    <!--<bean id="jeecgExcelView" class="org.jeecgframework.poi.excel.view.JeecgSingleExcelView" />-->
+    <!--<bean id="jeecgTemplateExcelView" class="org.jeecgframework.poi.excel.view.JeecgTemplateExcelView" />-->
+    <!--<bean id="jeecgTemplateWordView" class="org.jeecgframework.poi.excel.view.JeecgTemplateWordView" />-->
+    <!--<bean id="jeecgMapExcelView" class="org.jeecgframework.poi.excel.view.JeecgMapExcelView" />-->
+    <!--<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">-->
+        <!--<property name="defaultEncoding" value="UTF-8"></property>-->
+        <!--<property name="maxUploadSize" value="10000000"/>-->
+    <!--</bean>-->
+
+    <mvc:default-servlet-handler/>
+</beans>
