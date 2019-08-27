@@ -121,7 +121,7 @@ public class SolrServiceImpl implements ISolrService {
                     client.close();
 
                     // 将文档发送到ftp服务器
-                    FtpUtil.uploadFile(FTP_ADDRES, 0, FTP_USERNAME,
+                    FtpUtil.uploadFile(FTP_ADDRES, 21, FTP_USERNAME,
                             FTP_PASSWORD, FTP_BASEPATH, FTP_FILEPATH, multipartFile.getOriginalFilename(),
                             multipartFile.getInputStream() );
                     return ResultVoUtil.success();
