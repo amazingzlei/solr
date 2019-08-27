@@ -54,7 +54,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" style="position: relative">
                     文件名:{{item.fileName}}
-                    <a class="btn bg-danger" v-bind:href="'ftp://192.168.48.128/public/note/' + item.fileName" style="position: absolute;left: 93%;top:9%">下载</a>
+                    <a class="btn bg-danger" v-bind:href="'ftp://47.102.208.222/public/note/' + item.fileName" style="position: absolute;left: 93%;top:9%">下载</a>
                 </div>
             </div>
             <div>
