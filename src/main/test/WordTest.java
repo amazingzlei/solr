@@ -7,9 +7,7 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class WordTest {
     @Test
@@ -55,7 +53,18 @@ public class WordTest {
         }
     }
 
-    public static void main(String[] args) {
-
+    @Test
+    public void test03() throws Exception {
+        InputStream inputStream = new FileInputStream("C:\\Users\\admin\\Desktop\\以后学啥.txt");
+        InputStreamReader reader = new InputStreamReader(
+                inputStream,"utf-8"); // 建立一个输入流对象reader
+        BufferedReader br = new BufferedReader(reader); // 建立一个对象，它把文件内容转成计算机能读懂的语言
+        StringBuffer buffer = new StringBuffer();
+        String content ;
+        while((content=br.readLine()) != null){
+            buffer.append(content.trim());
+        }
+        String text = buffer.toString().trim();
+        System.out.println(text);
     }
 }
