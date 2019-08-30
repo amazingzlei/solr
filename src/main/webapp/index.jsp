@@ -170,7 +170,7 @@
                                         $.ajax({
                                             url: '<%=path%>/search',
                                             type: 'GET',
-                                            data: {content: info, 'current': 1, 'limit': 10},
+                                            data: {content: info, 'current': page, 'limit': 10},
                                             dataType: 'JSON',
                                             success: function (data) {
                                                 if (data.data != null) {

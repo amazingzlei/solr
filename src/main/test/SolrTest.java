@@ -93,7 +93,7 @@ public class SolrTest {
         // 2.查询
         SolrQuery query = new SolrQuery();
         query.setQuery("address:中华人民共和国浙江省");
-        query.set("fq", "host:com");// 设置过滤
+        query.set("fq", "host:com");// 设置过滤 过滤就是且的意思
         query.setSort("attempts", SolrQuery.ORDER.desc);// 设置排序
         query.setStart(2);// 设置起始页
         query.setRows(5);// 设置页容量

@@ -18,7 +18,7 @@ public class SolrController {
     @RequestMapping("search")
     @ResponseBody
     public ResultVo search(String content, int current, int limit) throws Exception {
-        return solrService.searchContent(content, 1, 10);
+        return solrService.searchContent(content, current, limit);
     }
 
     @RequestMapping(value = "upload",method = RequestMethod.POST)
