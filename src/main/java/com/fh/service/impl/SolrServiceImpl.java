@@ -158,7 +158,6 @@ public class SolrServiceImpl implements ISolrService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }else if(fileName.endsWith(".docx")){       //2007
             try {
                 XWPFDocument xwpf = new XWPFDocument(inputStream);
@@ -170,10 +169,9 @@ public class SolrServiceImpl implements ISolrService {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else if(fileName.endsWith(".txt")){
+        }else if(fileName.endsWith(".txt")||fileName.endsWith(".java")||fileName.endsWith(".js")||fileName.endsWith(".css")||fileName.endsWith(".sql")){
             /* 读入TXT文件 */
-            InputStreamReader reader = new InputStreamReader(
-                    inputStream,"utf-8"); // 建立一个输入流对象reader
+            InputStreamReader reader = new InputStreamReader(inputStream,"utf-8"); // 建立一个输入流对象reader
             BufferedReader br = new BufferedReader(reader); // 建立一个对象，它把文件内容转成计算机能读懂的语言
             StringBuffer buffer = new StringBuffer();
             String content ;
